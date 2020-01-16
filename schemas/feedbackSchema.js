@@ -7,9 +7,14 @@ module.exports = {
         score: Joi.number().integer().required(),
         feedback: Joi.string().required(),
     },
+    payload: {
+        uuidEvent: joi.string(),
+        score: joi.number().integer().min(1).max(5),
+        feedback: joi.string(),     
+    },
     params: {
         uuid: Joi.string().uuid({
-            version: 'uuidv4',
-        })
+            version: 'uuidv4'
+        }).required()
     }
 }
