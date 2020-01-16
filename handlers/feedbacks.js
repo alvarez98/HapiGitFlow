@@ -15,7 +15,22 @@ async function updateFeedback({ payload, params }, h){
     }).code(200).header('Content-Type', 'application/json')
 }
 
+getFeedbackByUuid = async ({params}, h) => {
+    let { uuid } = params.uuid, feedback;
+
+    try {
+        feedback = await Feedback.findOne({where: {uuid}});
+    } catch(err){
+        throw err;
+    }
+
+    return h
+        .response(feedback)
+        .code(200)
+        .header('Contet-Type', 'application/json');
+}
 
 module.exports = {
-    updateFeedback
+    updateFeedback,
+    getFeedbackByUuid,
 }
