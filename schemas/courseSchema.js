@@ -1,10 +1,17 @@
 const Joi = require('@hapi/joi')
 
 module.exports = {
+<<<<<<< HEAD
+    params: {
+        courseUuid: Joi.string().uuid({
+            version: 'uuidv4'
+        })},
+=======
     delete: {
         uuid: Joi.string().required(),
         version: 'uuidv4'
     },
+>>>>>>> develop
     create: {
         nameCourse: Joi.string().required(),
         description: Joi.string().required(),

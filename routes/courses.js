@@ -27,5 +27,22 @@ module.exports = [{
                 throw error
             }
         }
+    },
+    {
+        method: 'GET',
+        path: '/v1/course/{courseUuid}',
+        handler: handlers.getCourseByUuid,
+        options: {
+            validate: {
+                params: courseSchema.params,
+                failAction: (request, h, error) =>{
+                    throw error
+                }
+            }
+        }
     }
+<<<<<<< HEAD
+]
+=======
 }]
+>>>>>>> develop
