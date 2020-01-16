@@ -1,10 +1,12 @@
 const users = require('./users')
 const login = require('./login')
-const course = require('./course')
+const courses = require('./courses')
+const events = require('./events')
 
 module.exports = [
     ...users,
     ...login,
-    ...course
+    ...courses,
+    ...events
 ]
     
