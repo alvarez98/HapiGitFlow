@@ -23,6 +23,15 @@ async function setEvent( { payload }, h){
         }
     }
     return h.response({ id: user.uuid, message: 'Successfully created'}).code(201).header('Content-Type', 'application/json')
+},
+async function update({ params }, h){
+    let { uuid } = params, event
+    try {
+        event = await Event.update({ where: { uuid: userUuid }})
+    } catch (error) {
+        throw Boom.badImplementation('Something went wrong') 
+    }
+    return h.response(event).code(200).header('Content-Type', 'application/json')
 }
 module.exports = {
     setEvent

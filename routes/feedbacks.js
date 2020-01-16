@@ -16,7 +16,7 @@ module.exports = [
             }
         }
     }
-=======
+]
 const handlers = require('../handlers/feedbacks')
 const feedbackSchema = require('../schemas/feedbackSchema')
 

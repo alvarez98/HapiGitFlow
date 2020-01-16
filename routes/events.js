@@ -14,6 +14,19 @@ module.exports = [
                 }
             }
         }
+    },
+    {
+        method: 'PUT',
+        path: '/v1/events/{uuid}',
+        handler: handlers.updateEvent,
+        options: {
+            validate: {
+                query: eventSchema.update,
+                failAction: (request, h, error) => {
+                    throw error
+                }
+            }
+        }
     }
 ]
 
