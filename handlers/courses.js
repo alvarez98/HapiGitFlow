@@ -54,11 +54,8 @@ async function getCourseByUuid ({ params }, h){
 }
 
 module.exports = {
-<<<<<<< HEAD
     postCourse,
-    getCourseByUuid
-=======
+    getCourseByUuid,
     deleteUserId,
     postCourse
->>>>>>> develop
 }

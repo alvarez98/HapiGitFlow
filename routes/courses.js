@@ -16,7 +16,8 @@ module.exports = [{
 }]
 const courseSchema = require('../schemas/courseSchema')
 
-module.exports = [{
+module.exports = [
+    {
     method: 'POST',
     path: '/v1/courses',
     handler: handlers.postCourse,
@@ -27,7 +28,8 @@ module.exports = [{
                 throw error
             }
         }
-    },
+    }
+},
     {
         method: 'GET',
         path: '/v1/course/{courseUuid}',
@@ -41,8 +43,5 @@ module.exports = [{
             }
         }
     }
-<<<<<<< HEAD
+
 ]
-=======
-}]
->>>>>>> develop
