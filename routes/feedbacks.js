@@ -4,7 +4,7 @@ const feedbackSchema = require('../schemas/eventSchema');
 module.exports = [
     {
         method: 'GET',
-        path: 'v1/feedbacks/{uuid}',
+        path: '/v1/feedbacks/{uuid}',
         handler: handlers.feedbackSchema,
         options: {
             validate: {
