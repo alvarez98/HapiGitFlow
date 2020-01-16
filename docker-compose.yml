@@ -1,9 +1,9 @@
 version: '3.1'
 services: 
-  pg:
+  post:
     image: postgres:10-alpine
     ports:
-      - "5435:5432"
+      - "5436:5432"
     restart: always
     environment: 
       POSTGRES_USER: postgres
@@ -12,6 +12,6 @@ services:
     image: adminer
     restart: always
     links: 
-      - pg:db
+      - post:db
     ports: 
-      - 8081:8080
+      - 8082:8080

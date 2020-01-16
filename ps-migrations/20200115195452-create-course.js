@@ -15,13 +15,13 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       learn: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       content: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       requirements: {
-        type: Sequelize.ARRAY
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       nameCourse: {
         type: Sequelize.STRING
