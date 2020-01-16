@@ -5,7 +5,9 @@ const Boom = require('@hapi/boom')
 const Sequelize = require('sequelize')
 
 async function setEvent( { payload }, h){
-    let { uuidCourse } = payload
+    let { uuidCourse, active = true, status = false} = payload
+    payload.active = active
+    payload.status = status
     let course, event
     try{
         course = await Course.findOne({ where: { uuidCourse } })

@@ -9,6 +9,6 @@ module.exports = {
         startDate: Joi.date().required(),
         endDate: Joi.date().required(),
         price: Joi.number().integer().required(),
-        active: Joi.boolean().required()
+        status: Joi.boolean()
     }
 }
