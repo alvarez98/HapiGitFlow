@@ -4,7 +4,7 @@ const eventSchema = require('../schemas/eventSchema')
 module.exports = [
     {
         method:'POST',
-        path: 'v1/events',
+        path: '/v1/events',
         handler: handlers.setEvent,
         options: {
             validate: {

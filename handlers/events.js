@@ -24,3 +24,6 @@ async function setEvent( { payload }, h){
     }
     return h.response({ id: user.uuid, message: 'Successfully created'}).code(201).header('Content-Type', 'application/json')
 }
+module.exports = {
+    setEvent
+}
