@@ -40,8 +40,25 @@ async function postCourse({ payload }, h) {
         .code(201)
         .header('Content-Type', 'application/json')
 }
+async function getCourseByUuid ({ params }, h){
+    let { courseUuid } = params, course
+    try {
+        course = await Course.findOne ( { where : { uuid: courseUuid}})
+    }catch (error) {
+        throw Boom.notFound('Course not found')
+    }
+    return h
+        .response(course)
+        .code(200)
+        .header('Content-Type', 'application/json')
+}
 
 module.exports = {
+<<<<<<< HEAD
+    postCourse,
+    getCourseByUuid
+=======
     deleteUserId,
     postCourse
+>>>>>>> develop
 }
