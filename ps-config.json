@@ -1,26 +1,26 @@
 {
-  "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "HapiDev",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port": "5435"
-  },
-  "test": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "HapiTest",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port": "5435"
-  },
-  "production": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "HapiProd",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port": "5435"
-  }
+    "development": {
+        "username": "postgres",
+        "password": "postgres",
+        "database": "HapiDev",
+        "host": "127.0.0.1",
+        "dialect": "postgres",
+        "port": "5436"
+    },
+    "test": {
+        "username": "postgres",
+        "password": "postgres",
+        "database": "HapiTest",
+        "host": "127.0.0.1",
+        "dialect": "postgres",
+        "port": "5436"
+    },
+    "production": {
+        "username": "postgres",
+        "password": "postgres",
+        "database": "HapiProd",
+        "host": "127.0.0.1",
+        "dialect": "postgres",
+        "port": "5436"
+    }
 }
