@@ -1,8 +1,9 @@
-<<<<<<< HEAD
-const handlers = require('../handlers/events');
-const feedbackSchema = require('../schemas/eventSchema');
+'use strict'
+const handlers = require('../handlers/feedbacks')
+const feedbacksSchema = require('../schemas/feedbacksSchema')
 
 module.exports = [
+
     {
         method: 'GET',
         path: '/v1/feedbacks/{uuid}',
@@ -15,12 +16,33 @@ module.exports = [
                 }
             }
         }
-    }
-=======
-const handlers = require('../handlers/feedbacks')
-const feedbackSchema = require('../schemas/feedbackSchema')
-
-module.exports= [
+    } ,   
+    {
+        method: 'GET',
+        path: '/v1/feedbacks/{uuid}',
+        handler: handlers.feedbackSchema,
+        options: {
+            validate: {
+                params: feedbackSchema.params,
+                failAction: (req, h, err) => {
+                    throw err;
+                }
+            }
+        }
+    },
+    {
+        method: 'POST',
+        path: '/v1/feedbacks',
+        handler: handlers.createFeedback,
+        options: {
+            validate:{
+                payload: feedbacksSchema.create,
+                failAction: (req ,h, err) => {
+                    throw err
+                }
+            }
+        }
+    },
     {
         method: 'PUT',
         path: '/v1/feedbacks/{uuid}',
@@ -34,6 +56,5 @@ module.exports= [
                 }
             }
         }
-}
->>>>>>> develop
-]
+    }
+]                
