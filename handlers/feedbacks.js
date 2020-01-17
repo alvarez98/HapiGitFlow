@@ -23,6 +23,21 @@ async function createFeedback ({ payload }, h){
        .code(201)
        .header('Content-Type','application/json')
 }
+
+async function updateFeedback({ payload, params }, h) {
+    try {
+        await Feedback.update(payload, { where: { uuid: params.uuid } })
+    } catch (error) {
+        throw Boom.badImplementation('field was NOT updated')
+
+    }
+    return h
+        .response({
+            uuid: params.uuid,
+            message: 'Successfully updated'
+        }).code(200).header('Content-Type', 'application/json')
+}
 module.exports = {
-    createFeedback
+    createFeedback,
+    updateFeedback
 }
